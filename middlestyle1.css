@@ -1,0 +1,259 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 2%;
+    border: 2px solid black;
+}
+
+.flex_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1em;
+  }
+
+h1:before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: black;
+    border-radius: 2px;
+  }
+
+hr {
+    margin: 1% 3%;
+}
+
+#header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; 
+	height: 10%;
+	width:94%;
+    padding: 0% 3%;
+    z-index: 999;/*最前面*/
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: whitesmoke;
+	color: black;
+	text-align: center;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    }
+    
+nav ul li a{
+    color: #666;
+    padding:10px;
+}
+
+.g-navi{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+    
+.g-navi li a{
+    text-decoration: none;
+    font-weight: bold;
+    padding-bottom: 1%;
+        /*線の基点とするためrelativeを指定*/
+    position: relative;
+}
+    
+.g-navi li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+        /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background:#666;
+        /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+}
+    
+    /*現在地とhoverの設定*/
+.g-navi li.current a::after,
+.g-navi li a:hover::after {
+        transform: scale(1, 1);/*X方向にスケール拡大*/
+    }
+
+.a_block >h1{
+    margin-left: 3%;
+}
+
+.P{
+    text-align: center;
+    text-decoration:none;
+    font-size: 50px;
+    margin-top: 10px;
+    margin: 5% 0%;
+}
+
+.hh1 {
+    width: 100%;
+    height: 900px;
+    object-fit: cover;
+}
+
+#map {
+    padding-bottom: 10%;
+    text-align: center;
+}
+
+#map a{
+    text-decoration: none;
+    color: black;
+}
+
+#map >img{
+    max-width: 30%;
+    min-width: 200px;
+}
+
+#map a:hover{
+    filter: drop-shadow(0 0 0.25rem gray);
+    transition-duration: 1s;
+}
+
+.place {
+    width: 20%;
+    height: 80%;
+}
+
+.place div{
+    width: 100%;
+    color: #666
+ }
+
+.place img{
+    width: 80%;
+    vertical-align: middle;
+}
+
+.place img:hover, p:hover{
+    filter: drop-shadow(0 0 0.25rem gray);
+    transition-duration: 1s;
+    text-decoration: underline;
+}
+
+.j1{
+    float: right;
+    position: absolute;
+    left: 50%;
+    font-size: 200%;
+}
+
+.first{
+    width: 100%;
+    height: 200px;
+}
+
+.imageBox img{
+    object-fit: cover;
+    width: 40%;
+    max-height: 300px;
+    transition: .3s;
+}
+
+.four{
+    position: relative;
+    left: 60%;
+}
+
+.imageBox {
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color:whitesmoke;
+}
+
+.textBox {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 44%;
+    height: 100%;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    transition: .5s;
+    border-style: groove;
+}
+
+.textBox h1 {
+    cursor: grab;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    color: #fff;
+}
+
+.textBox h1::before{
+    background-color: #fff;
+}
+
+.imageBox:hover .textBox {
+    left: 0;
+}
+
+.imageBox:hover img {
+    transform: scale(1.2);
+}
+
+footer {
+    background-color: gainsboro;
+    margin: 0px;
+    padding: 1%;
+}
+
+#back_to_top{
+    width: 4%;
+    min-width: 40px;
+    z-index: 999;
+    position: fixed;
+    right: 5%;
+    bottom: 7%;
+    text-decoration: none;
+    color: #666;
+    text-align: right;
+}
+
+#back_to_top img{
+    padding: 2.5%;
+    width: 90%;
+}
+
+#back_to_top img:hover{
+    border-radius: 10%;
+    border: 2px solid black;
+}
+
+/*參考網站:
+css滑頁效果參考:http://iamedge.biz/post/31.html*/
